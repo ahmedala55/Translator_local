@@ -9,7 +9,7 @@ RUN npm run build
 FROM python:3.12-slim-bookworm
 COPY --from=web-build /usr/local/bin/node /usr/local/bin/node
 WORKDIR /app
-RUN pip install --no-cache-dir argostranslate==1.11.1
+RUN pip install --no-cache-dir 'argostranslate @ https://github.com/argosopentech/argos-translate/archive/17ed1a9b055c5ba1b51d76b683bbb0c64e2a4a88.zip'
 COPY engine.py setup_models.py translation_worker.py ./
 RUN python setup_models.py
 COPY --from=web-build /build/.next/standalone/ ./web/

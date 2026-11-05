@@ -7,7 +7,7 @@ function getWorker() {
   if (globalThis[key]) return globalThis[key];
   const root = path.resolve(process.cwd(), '..');
   const python = process.env.ARGOS_PYTHON || path.join(root, '.venv', process.platform === 'win32' ? 'Scripts/python.exe' : 'bin/python');
-  const child = spawn(python, ['-u', path.join(root, 'translation_worker.py')], { cwd: root, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, PYTHONIOENCODING: 'utf-8' } });
+  const child = spawn(/* turbopackIgnore: true */ python, ['-u', path.join(root, 'translation_worker.py')], { cwd: root, windowsHide: true, stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, PYTHONIOENCODING: 'utf-8' } });
   const state = { child, pending: new Map(), counter: 0 };
   globalThis[key] = state;
   const fail = () => {
