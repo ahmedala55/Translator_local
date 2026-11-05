@@ -3,3 +3,10 @@
 !engine.py
 !setup_models.py
 !backend.py
+!translation_worker.py
+!web/
+!web/**
+web/node_modules/
+web/.next/
+web/.vercel/
+web/.env*

@@ -46,7 +46,7 @@ export async function translate(text, source, target) {
     if (typeof result.translation !== 'string') throw new Error('Invalid translation response');
     return result.translation;
   }
-  if (process.env.VERCEL) throw new Error('Configure ARGOS_API_URL for Vercel');
+  if (process.env.VERCEL && process.env.ARGOS_LOCAL_ENGINE !== '1') throw new Error('Configure ARGOS_API_URL or use the Argos container');
   const state = getWorker();
   if (state.pending.size >= 8) return Promise.reject(new Error('Engine busy'));
   return new Promise((resolve, reject) => {

@@ -14,3 +14,6 @@ data/
 argos-translate/
 preview.png
 manfath-fonts/
+
+.vercel
+.env*
