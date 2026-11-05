@@ -1,5 +1,11 @@
 # الوافي — ترجمة عربية وإنكليزية
 
+الموقع المنشور: https://translator-local-drab.vercel.app
+
+لوحة التحكم: https://vercel.com/ahm17/translator-local
+
+تم نشر الموقع ومحرك Argos معاً من Terminal على خطة Hobby وفحص الصفحة والترجمة الفعلية بنجاح. لتحديث النسخة المنشورة من مجلد المشروع المرتبط، شغّل `npx vercel deploy --prod --scope ahm17`. ربط النشر التلقائي من GitHub لم ينجح بعد؛ رفع GitHub وحده لا ينشر التغييرات حالياً، فاستخدم أمر النشر.
+
 الترجمة من الإنكليزية إلى العربية فقط. واجهة Next.js وNode.js مع محرك Argos Translate.
 
 ## إعداد نسخة جديدة
